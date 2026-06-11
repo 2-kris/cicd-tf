@@ -21,6 +21,7 @@ resource "aws_security_group" "mysecuritygroup" {
   name        = "mysecuritygroup"
   description = "Allow SSH and HTTP"
   vpc_id      = aws_vpc.myvpc.id
+}
 
   resource "aws_security_group_rule" "ssh" {
     security_group_id = aws_security_group.mysecuritygroup.id
@@ -49,4 +50,3 @@ resource "aws_security_group" "mysecuritygroup" {
     protocol          = "-1"
     cidr_blocks       = ["0.0.0.0/0"]
   }
-}
